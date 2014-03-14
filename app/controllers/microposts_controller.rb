@@ -4,7 +4,8 @@ class MicropostsController < ApplicationController
 
   def index
   end
-
+  def show
+  end
   def create
   	@micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
@@ -20,6 +21,7 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     redirect_to root_url
   end
+
   private
 
     def correct_user

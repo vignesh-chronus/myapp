@@ -1,0 +1,7 @@
+  <%= form_for :comment, url: comments_path, remote: true do |f| %>
+  <div class="comment-field">
+    <%= f.text_field :content, placeholder: "enter comment..." %>
+    <%= f.hidden_field :micropost_id, value: feed_item.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+<% end %>

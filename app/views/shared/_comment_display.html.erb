@@ -1,0 +1,25 @@
+<div style="margin-left:60px;">
+    <div class="comment"><%= link_to_function pluralize(feed_item.comments.count, "comment"), "$(this).parent().parent().children('.comments').toggle()" %></div>
+    <div class = "comments" style="display: none;">
+    <% feed_item.comments.each do |comment| %>
+      <div>
+        <div>
+          <span class="comment-user">
+          <%= link_to comment.user.name, comment.user %>
+          </span>
+        </div>
+      <div>
+        <span class="comment-content"><%= comment.content %></span>
+        <span class="comment-timestamp">commented <%= time_ago_in_words(comment.created_at) %> ago.</span>
+        <span class="comment-content">
+        <% if current_user?(comment.user) %>
+          <%= link_to "delete", comment, method: :delete, remote: true,
+                                         data: { confirm: "You sure?" },
+                                         title: comment.content %>
+        <% end %>
+        </span>
+      </div>  
+  </div>
+  <% end %>
+  </div>
+</div>

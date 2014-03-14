@@ -16,7 +16,7 @@ class UsersController < ApplicationController
    @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to MySpace!"
       redirect_to @user
     else
       render 'new'
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   def edit

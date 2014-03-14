@@ -1,0 +1,2 @@
+$("#commentdisplay").html("<%= escape_javascript(render partial: 'shared/comment_display', locals: {feed_item: @feed_item} ) %>"
+						+"<%= escape_javascript(render partial: 'shared/comment_form', locals: {feed_item: @feed_item} ) %>")

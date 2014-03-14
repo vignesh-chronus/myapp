@@ -245,3 +245,28 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+/* Comments */
+
+.comment-field {
+  textfield {
+    height: 10px;
+    width: 400px;
+    margin-top: 5px;
+  }
+}
+
+.comment {
+  font-size: small;
+}
+.comment-user {
+  font-size: small;
+}
+.comment-content {
+  display: block;
+  font-size: x-small;
+}
+.comment-timestamp {
+  color: $grayLight;
+  font-size: xx-small;
+}
